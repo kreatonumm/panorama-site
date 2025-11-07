@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Просмотр панорамы</title>
+<link rel="stylesheet" href="js/pannellum.css">
+</head>
+<body>
+<div id="panorama" style="width:100%; height:100vh;"></div>
+<script src="js/pannellum.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const file = params.get('file');
+pannellum.viewer('panorama', {
+    type: 'equirectangular',
+    panorama: 'images/' + file,
+    autoLoad: true,
+    gyro: false
+});
+</script>
+</body>
+</html>
